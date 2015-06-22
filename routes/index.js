@@ -10,17 +10,10 @@ var user={
 username:'admin',
 password:'admin'
 }
-if(req.body.username===user.username && req.body.password===user.password){
-  req.session.user=user;
-  return res.redirect('/home');
-} else {
-  req.session.error='用户名或密码不正确';
-  return res.redirect('/login');
-}
+return res.redirect('/home');
 };
 
 exports.logout = function(req, res){
-req.session.user=null;
 res.redirect('/');
 };
 
